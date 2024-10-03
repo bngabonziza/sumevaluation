@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Evaluation</title>
+</head>
+<body>
+    <div>
+        <h1>Evaluate Summary</h1>
+        <p>{{ summary }}</p>
+        
+        <form action="/evaluate" method="POST">
+            <input type="hidden" name="entry_id" value="{{ entry_id }}">
+            <div>
+                <label for="accuracy">Accuracy (1-5):</label>
+                <input type="number" id="accuracy" name="accuracy" min="1" max="5" required>
+            </div>
+            <div>
+                <label for="content_coverage">Content Coverage (1-5):</label>
+                <input type="number" id="content_coverage" name="content_coverage" min="1" max="5" required>
+            </div>
+            <div>
+                <label for="conciseness">Conciseness (1-5):</label>
+                <input type="number" id="conciseness" name="conciseness" min="1" max="5" required>
+            </div>
+            <div>
+                <label for="coherence">Coherence (1-5):</label>
+                <input type="number" id="coherence" name="coherence" min="1" max="5" required>
+            </div>
+            <div>
+                <label for="abstraction">Abstraction (1-5):</label>
+                <input type="number" id="abstraction" name="abstraction" min="1" max="5" required>
+            </div>
+            <div>
+                <label for="comments">Comments (Optional):</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+            <div>
+                <button type="submit">Submit Evaluation</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
